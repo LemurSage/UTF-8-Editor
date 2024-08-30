@@ -32,6 +32,11 @@ const EditorPreviewComponent = () => {
             });
           }
           formattedContent.push({ text: node.text, formats });
+        } else if (node.type === "paragraph") {
+          if (node.content) {
+            node.content.forEach(processNode);
+          }
+          formattedContent.push({ text: "\n", formats: [] });
         } else if (node.content) {
           node.content.forEach(processNode);
         }
@@ -118,7 +123,13 @@ const EditorPreviewComponent = () => {
 
   const renderPreview = () => {
     return content.map((item, index) => (
-      <span key={index}>{applyUTF8Formatting(item.text, item.formats)}</span>
+      <span key={index}>
+        {item.text === "\n" ? (
+          <br />
+        ) : (
+          applyUTF8Formatting(item.text, item.formats)
+        )}
+      </span>
     ));
   };
 
