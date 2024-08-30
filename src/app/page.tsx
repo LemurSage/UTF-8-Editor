@@ -18,6 +18,7 @@ const EditorPreviewComponent = () => {
   const editor = useEditor({
     extensions: [StarterKit],
     content: "",
+    immediatelyRender: false,
     onUpdate: ({ editor }) => {
       const doc = editor.getJSON();
       const formattedContent: FormattedText[] = [];
@@ -78,6 +79,9 @@ const EditorPreviewComponent = () => {
             } else if (codePoint >= 97 && codePoint <= 122) {
               // Lowercase a-z
               return String.fromCodePoint(codePoint + 0x1d482 - 97);
+            } else if (codePoint >= 48 && codePoint <= 57) {
+              // Numbers 0-9
+              return String.fromCodePoint(codePoint + 0x1d7ce - 48);
             }
           }
           return char;
@@ -95,6 +99,9 @@ const EditorPreviewComponent = () => {
             } else if (codePoint >= 97 && codePoint <= 122) {
               // Lowercase a-z
               return String.fromCodePoint(codePoint + 0x1d41a - 97);
+            } else if (codePoint >= 48 && codePoint <= 57) {
+              // Numbers 0-9
+              return String.fromCodePoint(codePoint + 0x1d7ce - 48);
             }
           }
           return char;
