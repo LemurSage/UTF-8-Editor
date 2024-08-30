@@ -1,4 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Unicode Text Replacer
+
+## Features
+
+Apply bold, italic and bold-italic formatting to characters by replacing them with their Unicode counterparts. Built using TipTap.
+
+That's it. Not much I agree, but you'd rather have it and not want it, than want it and not have it.
 
 ## Getting Started
 
