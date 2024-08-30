@@ -118,9 +118,7 @@ const EditorPreviewComponent = () => {
 
   const renderPreview = () => {
     return content.map((item, index) => (
-      <span key={index}>
-        {applyUTF8Formatting(item.text, item.formats)}
-      </span>
+      <span key={index}>{applyUTF8Formatting(item.text, item.formats)}</span>
     ));
   };
 
